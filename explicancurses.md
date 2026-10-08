@@ -1,12 +1,13 @@
 <!--  se voce ta no vscode, aperte ctrl + k, solte as duas teclas e rapidamente aperte V pra visualizar o texto como deveria -->
 
 # TUTORIALZINHO DA NCURSES (Janelas, movimentação e oq eu aprendi)
-> ## A ncurses faz o terminal virar uma matriz, variavel, do tamanho do seu terminal. Então ela se comporta exatamente como um plano cartesiano, tem as coordenadas y e x e voce anda com o cursor e define onde vai começar a digitar algo pra esquerda, do mesmo jeito que voce anda com o seu cursos pra escrever um texto, mas pra isso voce tem que dar todas as informações sobre o lugar que ele tem que se mover, as vezes exato, as vezes relativo de onde ele já estava pra ter a formatação exata de como voce quer as coisas. Isso, de inicio pode ser meio dificil de entender, por isso to fazendo esse texto, pra se voce tiver curiosidade de como faz isso e pro caso de voce ser eu mesmo no futuro que esqueceu de como se usa essa biblioteca, e ta querendo se lembrar como que voce conseguiu fazer um bonequinh zoiudo se movimentar pela tela do terminal º-º
+> ## A ncurses faz o terminal virar uma matriz, **variavel**, do tamanho do seu terminal. Então ela se comporta quase como um plano cartesiano, tem as coordenadas y e x e voce anda com o cursor e define onde vai começar a digitar algo pra esquerda, do mesmo jeito que voce anda com o seu cursos pra escrever um texto, mas pra isso voce tem que dar todas as informações sobre o lugar que ele tem que se mover, as vezes exato(passando as coordenadas literais) , as vezes relativo de onde ele já estava(se ele já tava em (50,32) vc soma 2 em y e 8 em x pra ficar (52,40) o que faz ele ir 2 pra baixo e 8 pra direito) pra ter a formatação exata de como voce quer as coisas. Isso, de inicio pode ser meio dificil de entender, por isso to fazendo esse texto, pra se voce tiver curiosidade de como faz isso e pro caso de voce ser eu mesmo no futuro que esqueceu de como se usa essa biblioteca, e ta querendo se lembrar como que voce conseguiu fazer um bonequinh zoiudo se movimentar pela tela do terminal º-º
 
 ## Compilando o código (-lncurses)
-Pra compilar um código que usa essa biblioteca,vc precisa avisar pro compilador q vc ta usando a biblioteca ncurses junto com o seu arquivo. No terminal, você tem que colocar o `-lncurses` no final do seu comando. ( eu tbm botaria -o2 tbm pra otimizar o código)
+Pra compilar um código usando ncurses são necessárias algumas coisas, estar no Linux( até onde eu saiba n tem pra windows) e ser o super usuário do ambiente ( ou do Pc ou do docker, etc, pra ter ela baixada).
+Pra rodar o código com a biblioteca,vc precisa avisar pro compilador q vc ta usando a ela junto com o seu arquivo. No terminal, você tem que colocar o `-lncurses` no final do seu comando. ( eu tbm botaria -o2 tbm pra otimizar o código)
 * `ex: gcc codigo.c -o2 PE_JOGO -lncurses`
-Se você esquecer disso, vai dar um monte de erro estranho de "undefined reference" (como se as funções não existissem) e não vai compilar de jeito nenhum.
+Se você esquecer disso, vai dar um monte de erro estranho de "undefined reference" (como se as funções não existissem) e não vai compilar nada no final.
 
 > #### a ncurses tem varios comandos, e do mesmo jeito que os comandos da stdio, eles são uma "sigla" pra algo, então, os trechos do texto que tiverem nesse estilo aqui:
 ## exemplo
